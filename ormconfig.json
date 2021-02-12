@@ -1,0 +1,12 @@
+{
+  "type": "postgres",
+  "port": 5432,
+  "username": "postgres",
+  "password": "123",
+  "database": "meritt_exams",
+  "entities": ["./src/infra/db/postgres/**/typeorm/entities/*.ts"],
+  "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/infra/db/typeorm/migrations"
+  }
+}
