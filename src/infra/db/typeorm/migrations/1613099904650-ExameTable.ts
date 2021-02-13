@@ -36,6 +36,16 @@ export class ExameTable1613099904650 implements MigrationInterface {
             isNullable: true,
             default: null,
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     );

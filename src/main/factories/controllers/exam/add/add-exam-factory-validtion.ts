@@ -4,7 +4,7 @@ import { RequiredFieldsValidation } from 'shared/validators/required-fields-vali
 
 export const addExamValidation = (): ValidationComposite => {
   const validations: Validation[] = [];
-  for (const field of ['name', 'description', 'type', 'questions']) {
+  for (const field of ['name', 'description', 'type']) {
     validations.push(new RequiredFieldsValidation(field));
   }
 

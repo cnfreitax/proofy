@@ -26,7 +26,7 @@ export class Exam {
   })
   type: ProofType;
 
-  @Column({ type: 'array', nullable: true })
+  @Column({ type: 'json', nullable: true })
   questions: Questions[];
 
   @CreateDateColumn()
