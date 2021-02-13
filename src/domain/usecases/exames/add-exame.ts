@@ -1,8 +1,8 @@
-import { ExameModel, Questions } from 'domain/models';
+import { ExameModel, Questions, ProofType } from '../../../domain/models';
 
 export type AddExameParams = {
   name: string;
-  type: string;
+  type: ProofType;
   description: string;
   questions: Questions[];
 };

@@ -2,7 +2,7 @@
   "type": "postgres",
   "port": 5432,
   "username": "postgres",
-  "password": "123",
+  "password": "docker",
   "database": "meritt_exams",
   "entities": ["./src/infra/db/postgres/**/typeorm/entities/*.ts"],
   "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
