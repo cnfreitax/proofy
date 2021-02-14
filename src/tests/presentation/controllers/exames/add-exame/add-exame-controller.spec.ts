@@ -5,6 +5,7 @@ import { mockValidation, mockFakeRequest } from '../../../mocks';
 import { AddExam } from '../../../../../domain/usecases/exames';
 import { mockAddExame } from '../../../../domain/usecases/mocks';
 import { fakeExam } from '../../../../domain/usecases/models';
+import Mockdate from 'mockdate';
 
 type Sut = {
   sut: AddExameController;
@@ -26,6 +27,14 @@ const mockSut = (): Sut => {
 const fakeRequest = mockFakeRequest();
 
 describe('AddExam Controller', () => {
+  beforeEach(() => {
+    Mockdate.set(new Date());
+  });
+
+  afterEach(() => {
+    Mockdate.reset();
+  });
+
   it('should return Bad Request if invalid params is provided', async () => {
     const { sut, validationStub } = mockSut();
     jest.spyOn(validationStub, 'validate').mockReturnValueOnce(new Error());

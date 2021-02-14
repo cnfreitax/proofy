@@ -1,15 +1,15 @@
-import { AddExamRepository } from 'data/exam/protocols/add-account-repo';
-import { fakeExam } from '../../../domain/usecases/models';
+import { fakeCreateExamDTO, fakeExam } from '../../../domain/usecases/models';
 import { DbAddExam } from '../../../../data/exam/usecases/add/db-add-exam';
-import { AddExamRepositorySpy } from '../../mocks';
+import { AddExamRepsoitorySpy } from '../../mocks';
+import MockDate from 'mockdate';
 
 type Sut = {
   sut: DbAddExam;
-  addExamSpy: AddExamRepository;
+  addExamSpy: AddExamRepsoitorySpy;
 };
 
 const mockSut = (): Sut => {
-  const addExamSpy = new AddExamRepositorySpy();
+  const addExamSpy = new AddExamRepsoitorySpy();
   const sut = new DbAddExam(addExamSpy);
   return {
     sut,
@@ -18,16 +18,23 @@ const mockSut = (): Sut => {
 };
 
 describe('DbAddExame', () => {
+  beforeEach(() => {
+    MockDate.set(new Date());
+  });
+
+  afterEach(() => {
+    MockDate.reset();
+  });
   it('should return null if AddExamRepository returns null', async () => {
     const { sut, addExamSpy } = mockSut();
     jest.spyOn(addExamSpy, 'add').mockReturnValueOnce(null);
-    const dataReturn = await sut.add(fakeExam());
+    const dataReturn = await sut.add(fakeCreateExamDTO());
     expect(dataReturn).toBe(null);
   });
 
   it('should return a exam proof on succes repsotory success', async () => {
     const { sut } = mockSut();
-    const dataReturn = await sut.add(fakeExam());
+    const dataReturn = await sut.add(fakeCreateExamDTO());
     expect(dataReturn).toEqual(fakeExam());
   });
 });
