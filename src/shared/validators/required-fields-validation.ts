@@ -1,4 +1,4 @@
-import { MissingParamError } from '../errors';
+import { MissingParamError } from '../utils/errors';
 import { Validation } from '../interfaces';
 
 export class RequiredFieldsValidation implements Validation {

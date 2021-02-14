@@ -22,6 +22,10 @@ export const notFound = (error: string): HttpResponse => ({
   body: new NotFound(error),
 });
 
+export const forbidden = (error: Error): HttpResponse => ({
+  statusCode: 403,
+  body: error,
+});
 // export const anauthorized = (error: string): HttpResponse => ({
 //   statusCode: 401,
 //   body: new NotFound(error),
@@ -32,12 +36,7 @@ export const notFound = (error: string): HttpResponse => ({
 //   body: new AnauthorizedError(),
 // });
 
-// export const forbidden = (error: Error): HttpResponse => ({
-//   statusCode: 403,
-//   body: error,
-// });
-
-// export const noContent = (): HttpResponse => ({
-//   statusCode: 204,
-//   body: null,
-// });
+export const noContent = (): HttpResponse => ({
+  statusCode: 204,
+  body: null,
+});
