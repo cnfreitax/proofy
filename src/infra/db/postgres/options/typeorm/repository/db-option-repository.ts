@@ -1,5 +1,5 @@
 import { AddOptionsRepository } from 'data/options/protocols/add-options-repository';
-import { CreateOptionDTO } from 'domain/usecases/options/add-options';
+import { CreateOptionDTO } from '../../../../../../domain/usecases/options/add-options';
 import { Repository, getRepository } from 'typeorm';
 import { Option } from '../entities/option';
 

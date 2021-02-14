@@ -1,4 +1,4 @@
-import { AddExameParams } from 'domain/usecases/exames';
+import { AddExameParams } from '../../../../domain/usecases/exames';
 import { ExameModel, ProofType } from '../../../../domain/models';
 
 export const fakeExam = (): ExameModel => ({

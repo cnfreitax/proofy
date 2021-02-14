@@ -2,7 +2,7 @@ import { AddOptionsRepository } from 'data/options/protocols/add-options-reposit
 import {
   AddOptions,
   CreateOptionDTO,
-} from 'domain/usecases/options/add-options';
+} from '../../../../domain/usecases/options/add-options';
 
 export class DbAddOptions implements AddOptions {
   constructor(private readonly addOptionsRepository: AddOptionsRepository) {}

@@ -11,7 +11,7 @@ import {
   noContent,
   serverError,
   validCorrectOptionsAmount,
-} from './add-imports-controller-improts';
+} from './add-options-controller-improts';
 
 export class AddOptionsController implements Controller {
   constructor(
@@ -44,7 +44,6 @@ export class AddOptionsController implements Controller {
       await this.addOptions.add(httpRequest.body);
       return noContent();
     } catch (error) {
-      console.log(error);
       return serverError(error);
     }
   }

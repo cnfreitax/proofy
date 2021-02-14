@@ -1,4 +1,4 @@
-import { CreateQuestionDTO } from 'domain/usecases/questions/add-question';
+import { CreateQuestionDTO } from '../../../../domain/usecases/questions/add-question';
 import { QuestionModel } from '../../../../domain/models';
 
 export const fakeQuestionModel = (): QuestionModel => ({
