@@ -22,12 +22,11 @@ export class AddExameController implements Controller {
         return badResquest(error);
       }
 
-      const { name, type, questions, description } = httpRequest.body;
+      const { name, type, description } = httpRequest.body;
 
       const result = await this.addExame.add({
         name,
         type,
-        questions,
         description,
       });
       return ok(result);

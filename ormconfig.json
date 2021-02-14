@@ -4,7 +4,7 @@
   "username": "postgres",
   "password": "docker",
   "database": "meritt_db",
-  "entities": ["./src/infra/db/postgres/**/entities/*.ts"],
+  "entities": ["./src/infra/db/postgres/**/typeorm/entities/*.ts"],
   "migrations": ["./src/infra/db/typeorm/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/infra/db/typeorm/migrations"

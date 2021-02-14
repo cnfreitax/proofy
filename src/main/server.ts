@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { ConnectionDatabase } from './config';
 
 ConnectionDatabase.connect()

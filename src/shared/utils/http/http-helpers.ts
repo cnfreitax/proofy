@@ -1,5 +1,5 @@
 import { HttpResponse } from '../../interfaces';
-import { ServerError } from '../errors/server-error';
+import { ServerError, NotFound } from '../errors';
 // import { ServerError, AnauthorizedError } from '../../error';
 
 export const badResquest = (error: Error): HttpResponse => ({
@@ -16,6 +16,16 @@ export const ok = (data: any): HttpResponse => ({
   statusCode: 200,
   body: data,
 });
+
+export const notFound = (error: string): HttpResponse => ({
+  statusCode: 403,
+  body: new NotFound(error),
+});
+
+// export const anauthorized = (error: string): HttpResponse => ({
+//   statusCode: 401,
+//   body: new NotFound(error),
+// });
 
 // export const anauthorized = (): HttpResponse => ({
 //   statusCode: 401,

@@ -1,11 +1,13 @@
-import { Questions, ProofType } from '../../../../../domain/models';
+import { ProofType } from '../../../../../../domain/models';
 import {
   Column,
   PrimaryGeneratedColumn,
   Entity,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
+import { Question } from '../../../question/typeorm/entities/question';
 
 @Entity('exams_tb')
 export class Exam {
@@ -26,8 +28,10 @@ export class Exam {
   })
   type: ProofType;
 
-  @Column({ type: 'json', nullable: true })
-  questions: Questions[];
+  @OneToMany(() => Question, question => question.exam_id, {
+    cascade: true,
+  })
+  questions: Question[];
 
   @CreateDateColumn()
   created_at: Date;

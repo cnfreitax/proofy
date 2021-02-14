@@ -1,4 +1,4 @@
-import { Questions } from './questions';
+import { QuestionModel } from './questions';
 
 export enum ProofType {
   ONLINE = 'online',
@@ -10,7 +10,7 @@ export type ExameModel = {
   name: string;
   description: string;
   type: string;
-  questions: Questions[];
+  questions: QuestionModel[];
   created_at: Date;
   updated_at: Date;
 };
