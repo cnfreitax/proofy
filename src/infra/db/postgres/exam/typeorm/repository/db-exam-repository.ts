@@ -21,7 +21,10 @@ export class ExamRepository
   }
 
   public async findById(id: string): Promise<ExameModel | undefined> {
-    const exam = await this.repository.findOne({ where: { id } });
+    const exam = await this.repository.findOne({
+      where: { id },
+      relations: ['questions'],
+    });
     return exam;
   }
 }

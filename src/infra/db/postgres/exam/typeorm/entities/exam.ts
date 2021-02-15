@@ -28,7 +28,8 @@ export class Exam {
   })
   type: ProofType;
 
-  @OneToMany(() => Question, question => question.exam_id, {
+  @OneToMany(() => Question, question => question.exam, {
+    eager: true,
     cascade: true,
   })
   questions: Question[];

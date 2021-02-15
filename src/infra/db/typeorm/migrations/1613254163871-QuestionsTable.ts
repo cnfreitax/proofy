@@ -22,12 +22,6 @@ export class QuestionsTable1613254163871 implements MigrationInterface {
             type: 'int',
           },
           {
-            name: 'options',
-            type: 'json',
-            isNullable: true,
-            default: null,
-          },
-          {
             name: 'exam_id',
             type: 'uuid',
           },

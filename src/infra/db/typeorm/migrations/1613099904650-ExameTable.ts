@@ -25,16 +25,15 @@ export class ExameTable1613099904650 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'questions',
+            type: 'json',
+            isNullable: true,
+          },
+          {
             name: 'type',
             type: 'enum',
             enumName: 'exams_type_enum',
             default: "'online'",
-          },
-          {
-            name: 'questions',
-            type: 'json',
-            isNullable: true,
-            default: null,
           },
           {
             name: 'created_at',

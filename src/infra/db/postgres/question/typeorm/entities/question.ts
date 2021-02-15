@@ -1,12 +1,13 @@
-import { OptionsModel } from 'domain/models';
+import { Option } from '../../../options/typeorm/entities/option';
 import {
   Column,
   PrimaryGeneratedColumn,
   Entity,
   CreateDateColumn,
   UpdateDateColumn,
-  JoinColumn,
   ManyToOne,
+  JoinColumn,
+  OneToMany,
 } from 'typeorm';
 import { Exam } from '../../../exam/typeorm/entities/exam';
 
@@ -28,8 +29,11 @@ export class Question {
   @Column()
   exam_id: string;
 
-  @Column({ type: 'json', nullable: true })
-  options: OptionsModel[];
+  @OneToMany(() => Option, option => option.question, {
+    eager: true,
+    cascade: true,
+  })
+  options: Option[];
 
   @CreateDateColumn()
   created_at: Date;
