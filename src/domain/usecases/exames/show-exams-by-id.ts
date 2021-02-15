@@ -1,5 +1,5 @@
 import { ExameModel } from '../../../domain/models';
 
-export interface ShowExamById {
+export interface ShowExam {
   findById: (id: string) => Promise<ExameModel>;
 }

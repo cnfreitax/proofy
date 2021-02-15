@@ -6,12 +6,12 @@ import {
   forbidden,
   InvalidParamError,
   ok,
-  ShowExamById,
+  ShowExam,
   makeRandoKeyOptions,
 } from './show-exam-controller-imports';
 
 export class ShowExamController implements Controller {
-  constructor(private readonly showExamById: ShowExamById) {}
+  constructor(private readonly showExamById: ShowExam) {}
 
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
@@ -24,12 +24,10 @@ export class ShowExamController implements Controller {
         );
       }
 
-      console.log(exam);
       const formatExam = makeRandoKeyOptions(exam);
 
       return ok(formatExam);
     } catch (error) {
-      console.log(error);
       return serverError(error);
     }
   }

@@ -12,6 +12,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "no-extra-boolean-cast": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-misused-promises": "off",

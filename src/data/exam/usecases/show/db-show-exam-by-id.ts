@@ -1,8 +1,8 @@
 import { FindExamByIdRepository } from '../../../../data/exam/protocols';
-import { ShowExamById } from '../../../../domain/usecases/exames/show-exams-by-id';
+import { ShowExam } from '../../../../domain/usecases/exames/show-exams-by-id';
 import { ExameModel } from '../add/exam-imports';
 
-export class DbShowExam implements ShowExamById {
+export class DbShowExam implements ShowExam {
   constructor(
     private readonly showExamByIdRepository: FindExamByIdRepository,
   ) {}

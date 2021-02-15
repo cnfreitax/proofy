@@ -36,7 +36,6 @@ export class AddQuestionController implements Controller {
       }
       return ok(question);
     } catch (error) {
-      console.log(error);
       return serverError(error);
     }
   }

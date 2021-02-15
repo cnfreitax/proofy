@@ -31,7 +31,6 @@ export class AddExameController implements Controller {
       });
       return ok(result);
     } catch (err) {
-      console.log(err);
       return serverError(err);
     }
   }

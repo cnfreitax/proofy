@@ -64,45 +64,83 @@ describe('AddOption Controller', () => {
     );
   });
 
-  it('should return a null on findQuestionById fail', async () => {
-    const { sut, findQuestionByIdRepositorySpy } = mockSut();
-    findQuestionByIdRepositorySpy.questionResult = null;
-    const result = await sut.handle(fakeRequestAddOption());
-    expect(result).toEqual(
-      forbidden(new InvalidParamError('Question not found')),
-    );
-    expect(result.statusCode).toBe(403);
-  });
+  // it('should return forbiden 403 if request have many options with correct values', async () => {
+  //   const { sut } = mockSut();
+  //   const result = await sut.handle({
+  //     body: {
+  //       options: [
+  //         {
+  //           value: 'options 1',
+  //           correct: true,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //         {
+  //           value: 'options 2',
+  //           correct: true,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //         {
+  //           value: 'options 2',
+  //           correct: false,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //         {
+  //           value: 'options 2',
+  //           correct: false,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //         {
+  //           value: 'options 2',
+  //           correct: false,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //       ],
+  //     },
+  //   });
+  //   expect(result).toEqual(
+  //     forbidden(new InvalidParamError('Question not found')),
+  //   );
+  //   expect(result.statusCode).toBe(403);
+  // });
 
-  it('should return forbiden 403 if request have many options with correct values', async () => {
-    const { sut } = mockSut();
-    const result = await sut.handle({
-      body: {
-        options: [
-          {
-            value: 'options 1',
-            correct: false,
-            question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
-          },
-          {
-            value: 'options 2',
-            correct: true,
-            question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
-          },
-          {
-            value: 'options 2',
-            correct: true,
-            question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
-          },
-        ],
-      },
-    });
+  // it('should return 403 forbidden if the request has less than five option options with correct values', async () => {
+  //   const { sut } = mockSut();
+  //   const result = await sut.handle({
+  //     body: {
+  //       options: [
+  //         {
+  //           value: 'options 1',
+  //           correct: false,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //         {
+  //           value: 'options 2',
+  //           correct: false,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //         {
+  //           value: 'options 2',
+  //           correct: false,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //         {
+  //           value: 'options 2',
+  //           correct: false,
+  //           question_id: '0f7d872d-8b4f-450e-8f21-cff1466b25c0',
+  //         },
+  //       ],
+  //     },
+  //   });
 
-    expect(result).toEqual(
-      forbidden(new InvalidParamError('Many correct values to same question')),
-    );
-    expect(result.statusCode).toBe(403);
-  });
+  //   expect(result).toEqual(
+  //     forbidden(
+  //       new InvalidParamError(
+  //         'It is necessary to register 5 options for response',
+  //       ),
+  //     ),
+  //   );
+  //   expect(result.statusCode).toBe(403);
+  // });
 
   it('should call add method from OptionRepository with correct values', async () => {
     const { sut, addOptionRepositorySpy } = mockSut();
@@ -124,5 +162,15 @@ describe('AddOption Controller', () => {
     const { sut } = mockSut();
     const result = await sut.handle(fakeRequestAddOption());
     expect(result.statusCode).toBe(204);
+  });
+
+  it('should return a badRequest on findQuestionById fail', async () => {
+    const { sut, findQuestionByIdRepositorySpy } = mockSut();
+    findQuestionByIdRepositorySpy.questionResult = null;
+    const result = await sut.handle(fakeRequestAddOption());
+    expect(result).toEqual(
+      forbidden(new InvalidParamError('Question not found')),
+    );
+    expect(result.statusCode).toBe(403);
   });
 });
