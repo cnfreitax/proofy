@@ -6,7 +6,6 @@ export const fakeExam = (): ExameModel => ({
   name: 'any_name',
   type: ProofType.ONLINE,
   description: 'any_description',
-  questions: [],
   created_at: new Date(),
   updated_at: new Date(),
 });
