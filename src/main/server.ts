@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import fs from 'fs';
 import { ConnectionDatabase } from './config';
 
 ConnectionDatabase.connect()
@@ -7,4 +8,12 @@ ConnectionDatabase.connect()
     const PORT = process.env.PORT;
     app.listen(PORT, () => console.log(`Hey, server started on ${PORT}`));
   })
-  .catch(err => console.log(err));
+  .catch(err =>
+    fs.appendFile(
+      'log-errors.txt',
+      `date: ${new Date()} - error: ${err} \n`,
+      () => {
+        console.log(`someone didn't drink coffee...`, err);
+      },
+    ),
+  );
