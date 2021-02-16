@@ -1,3 +1,5 @@
 node_modules
 env
 dist
+ormconfig.json
+log-errors.txt
