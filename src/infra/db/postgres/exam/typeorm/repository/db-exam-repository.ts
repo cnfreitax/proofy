@@ -3,13 +3,18 @@ import { AddExameParams, UpdateExamDTO } from 'domain/usecases/exames';
 import { Repository, getRepository } from 'typeorm';
 import {
   AddExamRepository,
+  DeleteExamRepository,
   FindExamByIdRepository,
   UpdateExamRepository,
 } from '../../../../../../data/exam/protocols';
 import { Exam } from '../entities/exam';
 
 export class ExamRepository
-  implements AddExamRepository, FindExamByIdRepository, UpdateExamRepository {
+  implements
+    AddExamRepository,
+    FindExamByIdRepository,
+    UpdateExamRepository,
+    DeleteExamRepository {
   private readonly repository: Repository<Exam>;
   constructor() {
     this.repository = getRepository(Exam);
@@ -46,5 +51,14 @@ export class ExamRepository
 
     await this.repository.save(exam);
     return exam;
+  }
+
+  public async delete(id: string): Promise<ExameModel> {
+    const exam = await this.repository.findOne({ where: { id } });
+    if (!exam) {
+      return null;
+    }
+
+    return this.repository.remove(exam);
   }
 }
