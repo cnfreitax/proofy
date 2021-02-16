@@ -1,4 +1,7 @@
-import { AddExameParams } from '../../../../domain/usecases/exames';
+import {
+  AddExameParams,
+  UpdateExamDTO,
+} from '../../../../domain/usecases/exames';
 import { ExameModel, ProofType } from '../../../../domain/models';
 
 export const fakeExam = (): ExameModel => ({
@@ -11,6 +14,13 @@ export const fakeExam = (): ExameModel => ({
 });
 
 export const fakeCreateExamDTO = (): AddExameParams => ({
+  name: 'any_name',
+  description: 'any_description',
+  type: ProofType.ONLINE,
+});
+
+export const fakeExamToUpdate = (): UpdateExamDTO => ({
+  id: 'any_anothe_id',
   name: 'any_name',
   description: 'any_description',
   type: ProofType.ONLINE,
