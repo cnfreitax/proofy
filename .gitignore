@@ -1,5 +1,5 @@
 node_modules
 /.env
 dist
-/ormconfig.json
+/ormconfig.js
 /log-errors.txt
