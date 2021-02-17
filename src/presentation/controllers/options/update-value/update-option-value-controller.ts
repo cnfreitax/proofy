@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpResponse,
   Validation,
-  UpdateValueOption,
+  DbUpdateValueOption,
   serverError,
   forbidden,
   ok,
@@ -14,7 +14,7 @@ import {
 export class UpdateOptionValueController implements Controller {
   constructor(
     private readonly validation: Validation,
-    private readonly updateValueOption: UpdateValueOption,
+    private readonly updateValueOption: DbUpdateValueOption,
   ) {}
 
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {

@@ -8,5 +8,11 @@
     "baseUrl": "./src",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
-  }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/tests"
+  ]
 }
