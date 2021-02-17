@@ -1,1 +1,2 @@
 date: Tue Feb 16 2021 16:12:50 GMT-0300 (Horário Padrão de Brasília) - error: Error: connect ECONNREFUSED 127.0.0.1:5432 
+date: Wed Feb 17 2021 12:20:02 GMT-0300 (Horário Padrão de Brasília) - error: error: password authentication failed for user "postgres" 
