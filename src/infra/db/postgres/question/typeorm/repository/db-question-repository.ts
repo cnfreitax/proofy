@@ -9,13 +9,15 @@ import {
   FindQuestionByIdRepository,
   AddQuestionRepository,
   UpdateQuestionRepository,
+  DeleteQuestionRepository,
 } from 'data/questions/protocols';
 
 export class QuestionRepository
   implements
     AddQuestionRepository,
     FindQuestionByIdRepository,
-    UpdateQuestionRepository {
+    UpdateQuestionRepository,
+    DeleteQuestionRepository {
   private readonly repository: Repository<Question>;
   constructor() {
     this.repository = getRepository(Question);
@@ -45,5 +47,14 @@ export class QuestionRepository
     question.points = points;
     question.statement = statement;
     return this.repository.save(question);
+  }
+
+  async delete(id: string): Promise<QuestionModel> {
+    const question = await this.repository.findOne({ where: { id } });
+    if (!question) {
+      return null;
+    }
+
+    return await this.repository.remove(question);
   }
 }
