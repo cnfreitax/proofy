@@ -2,7 +2,7 @@
   "type": "postgres",
   "port": "postgres://oeeqynemvrxsri:b79cde92a1244cbd0a2b4a5be93df3602a3887261d5632ec7c1770bc24cae521@ec2-54-225-190-241.compute-1.amazonaws.com:5432/d1gj94it3lcsqk",
   "username": "postgres",
-  "password": "123",
+  "password": "b79cde92a1244cbd0a2b4a5be93df3602a3887261d5632ec7c1770bc24cae521",
   "database": "meritt_db",
   "entities": ["./src/infra/db/postgres/**/typeorm/entities/*.js"],
   "migrations": ["./src/infra/db/typeorm/migrations/*.js"],
