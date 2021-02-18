@@ -28,6 +28,7 @@ export class ShowExamController implements Controller {
 
       return ok(formatExam);
     } catch (error) {
+      console.log(error);
       return serverError(error);
     }
   }

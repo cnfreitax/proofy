@@ -1,2 +1,44 @@
 date: Tue Feb 16 2021 16:12:50 GMT-0300 (Horário Padrão de Brasília) - error: Error: connect ECONNREFUSED 127.0.0.1:5432 
 date: Wed Feb 17 2021 12:20:02 GMT-0300 (Horário Padrão de Brasília) - error: error: password authentication failed for user "postgres" 
+date: Wed Feb 17 2021 18:34:00 GMT-0300 (Horário Padrão de Brasília) - error: Error: Cannot find module './error'
+Require stack:
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\schemas\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\schemas.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\swagger.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\app.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\server.ts 
+date: Wed Feb 17 2021 18:34:02 GMT-0300 (Horário Padrão de Brasília) - error: Error: Cannot find module './error'
+Require stack:
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\schemas\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\schemas.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\swagger.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\app.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\server.ts 
+date: Wed Feb 17 2021 18:42:35 GMT-0300 (Horário Padrão de Brasília) - error: Error: ⨯ Unable to compile TypeScript:
+[96msrc/main/docs/paths/exam/view-exam-path.ts[0m:[93m17[0m:[93m14[0m - [91merror[0m[90m TS1005: [0m',' expected.
+
+[7m17[0m     responses: {
+[7m  [0m [91m             ~[0m
+[96msrc/main/docs/paths/exam/view-exam-path.ts[0m:[93m35[0m:[93m3[0m - [91merror[0m[90m TS1137: [0mExpression or comma expected.
+
+[7m35[0m   },
+[7m  [0m [91m  ~[0m
+ 
+date: Wed Feb 17 2021 18:59:06 GMT-0300 (Horário Padrão de Brasília) - error: Error: Cannot find module './questions'
+Require stack:
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\paths\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\path.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\swagger.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\app.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\server.ts 
+date: Wed Feb 17 2021 22:58:58 GMT-0300 (Horário Padrão de Brasília) - error: Error: Cannot find module './options'
+Require stack:
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\paths\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\path.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\docs\index.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\swagger.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\config\app.ts
+- C:\Users\Victor Freitas\Documents\projects\proofy\src\main\server.ts 

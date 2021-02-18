@@ -5,7 +5,10 @@ import { adapterRouter } from '../adapters/express-route-adapter';
 import { addExamController } from '../factories/controllers/questions/add/add-question-factory';
 
 export default (router: Router): void => {
-  router.post('/:exam_id/question', adapterRouter(addExamController()));
+  router.post('/question/:exam_id', adapterRouter(addExamController()));
   router.put('/question/:id', adapterRouter(makeUpdateQuestionController()));
-  router.delete('/question/:id', adapterRouter(makeDeleteQuestionController()));
+  router.delete(
+    '/question/delete/:id',
+    adapterRouter(makeDeleteQuestionController()),
+  );
 };

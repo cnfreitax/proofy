@@ -8,6 +8,6 @@ import { addExamController } from '../factories/controllers/exam/add/add-exam-fa
 export default (router: Router): void => {
   router.post('/exam', adapterRouter(addExamController()));
   router.get('/exam/:exam_id', adapterRouter(makeFactoryShowExamController()));
-  router.put('/exam/:exam_id', adapterRouter(mackUpdateController()));
+  router.put('/exam/:exam_id/update', adapterRouter(mackUpdateController()));
   router.delete('/exam/:exam_id', adapterRouter(makeDeleteExamFactory()));
 };

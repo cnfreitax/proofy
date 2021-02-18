@@ -5,7 +5,7 @@ import { adapterRouter } from '../adapters/express-route-adapter';
 
 export default (router: Router): void => {
   router.post(
-    '/:question_id/options',
+    '/options/:question_id',
     adapterRouter(makeAddOptionsController()),
   );
   router.put('/option/:id', adapterRouter(makeUpdateOptionController()));
