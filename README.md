@@ -27,15 +27,15 @@
 > Clone o repositório
 > Dentro do diretório da aplicação execute com **yarn** ou **npm install**
 
-*** Certifique-se de que seu banco está instanciado e não se esqueça do ormconfig.js ***
+**Certifique-se de que seu banco está instanciado e não se esqueça do ormconfig.js**
 
 > - cola rodar um container postgres:
-*** docker run --name nomecontainer  -e POSTGRES_PASSWORD=123 -p 5432:5432 -d postgres ***
+**docker run --name nomecontainer  -e POSTGRES_PASSWORD=123 -p 5432:5432 -d postgres**
 > - Crie o seguinte banco: ***meritt_db***
 
 <p> Com o a aplicação conectada, rode o seguinte comando: yarn/npm typeorm migration:run</p>
 
-> - Rode *** yarn dev *** - o Servidor deve ser instanciado em <http://localhost:3333>
+> - Rode **yarn dev** - o Servidor deve ser instanciado em <http://localhost:3333>
 
 > - Verifique a documentação de rotas em <http://lolcahost:3333/api-docs> ou verifique no arquivo insomnia na raiz do projeto
 
